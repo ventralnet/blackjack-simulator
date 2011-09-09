@@ -12,7 +12,17 @@ class Card
   end
  
   def is_ace?
-    :face_value.count == 2
+     return @value == :ace
+  end
+ 
+  def face_value
+    if @value == :ace
+      [1,11]
+    elsif (@value == :jack || @value == :queen || @value == :king)
+      [10]
+    else
+      [@value]
+    end
   end
 
   def to_s

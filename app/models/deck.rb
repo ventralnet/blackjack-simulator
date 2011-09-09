@@ -1,4 +1,4 @@
-require 'card.rb'
+require File.dirname(__FILE__) + '/' + 'card.rb'
 
 class Deck
 
@@ -11,7 +11,6 @@ class Deck
         @deck << Card.new(suit, value)
       end
     end  
-    puts @deck.count
   end
 
 

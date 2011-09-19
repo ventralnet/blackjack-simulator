@@ -28,6 +28,23 @@ describe BlackjackHand do
 
   end
 
+  context 'get_strategy_key' do
+    it 'should return the correct key given an ace hand' do
+
+		end
+
+		it 'should return the correct key given a pair hand' do
+      
+		end
+
+		it 'should return the correct key given an ace with two face cards that add under 10' do
+
+		end
+
+
+	end	
+
+
   context 'hand_value' do
     it 'should handle blackjack correctly' do
       ace_card = Card.new(:diamond,:ace)

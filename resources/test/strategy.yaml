@@ -1,0 +1,135 @@
+#If nothing is found for example holding an 8 or less. It is assumed you hit on anything
+
+--- 
+:9: 
+  2: :hit
+  3: :double
+  4: :double
+  5: :double
+  6: :double
+  7: :hit
+  8: :hit
+  9: :hit
+  10: :hit
+  :ace: :hit
+:10:
+  2: :double
+  3: :double
+  4: :double
+  5: :double
+  6: :double
+  7: :double
+  8: :double
+  9: :double
+  10: :hit
+  :ace: :hit
+:11:
+  2: :double
+  3: :double
+  4: :double
+  5: :double
+  6: :double
+  7: :double
+  8: :double
+  9: :double
+  10: :double
+  :ace: :hit
+:12:
+  2: :hit
+  3: :hit
+  4: :stay
+  5: :stay
+  6: :stay
+  7: :hit
+  8: :hit
+  9: :hit
+  10: :hit
+  :ace: :hit
+:13:
+  2: :stay
+  3: :stay
+  4: :stay
+  5: :stay
+  6: :stay
+  7: :hit
+  8: :hit
+  9: :hit
+  10: :hit
+  :ace: :hit
+:14:
+  2: :stay
+  3: :stay
+  4: :stay
+  5: :stay
+  6: :stay
+  7: :hit
+  8: :hit
+  9: :hit
+  10: :hit
+  :ace: :hit
+:15:
+  2: :stay
+  3: :stay
+  4: :stay
+  5: :stay
+  6: :stay
+  7: :hit
+  8: :hit
+  9: :hit
+  10: :hit
+  :ace: :hit
+:16:
+  2: :stay
+  3: :stay
+  4: :stay
+  5: :stay
+  6: :stay
+  7: :hit
+  8: :hit
+  9: :hit
+  10: :hit
+  :ace: :hit
+:17:
+  2: :stay
+  3: :stay
+  4: :stay
+  5: :stay
+  6: :stay
+  7: :stay
+  8: :stay
+  9: :stay
+  10: :stay
+  :ace: :stay
+:18:
+  2: :stay
+  3: :stay
+  4: :stay
+  5: :stay
+  6: :stay
+  7: :stay
+  8: :stay
+  9: :stay
+  10: :stay
+  :ace: :stay
+:19:
+  2: :stay
+  3: :stay
+  4: :stay
+  5: :stay
+  6: :stay
+  7: :stay
+  8: :stay
+  9: :stay
+  10: :stay
+  :ace: :stay
+:20:
+  2: :stay
+  3: :stay
+  4: :stay
+  5: :stay
+  6: :stay
+  7: :stay
+  8: :stay
+  9: :stay
+  10: :stay
+  :ace: :stay

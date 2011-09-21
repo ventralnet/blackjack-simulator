@@ -29,16 +29,28 @@ describe BlackjackHand do
   end
 
   context 'get_strategy_key' do
-    it 'should return the correct key given an ace hand' do
+    before(:all) do
+      @five = Card.new :spade,5
+      @five2 = Card.new :diamond,5
+      @ace = Card.new :diamond,:ace
+      @four = Card.new :diamond,4
+    end
 
+
+    it 'should return the correct key given an ace hand' do
+      hand = BlackjackHand.new @ace, @four
+      hand.get_strategy_key.should eql("A4")
 		end
 
 		it 'should return the correct key given a pair hand' do
-      
+      hand = BlackjackHand.new @five, @five2
+      hand.get_strategy_key.should eql("55")  
 		end
 
 		it 'should return the correct key given an ace with two face cards that add under 10' do
-
+      hand = BlackjackHand.new @five, @ace
+      hand << @four
+      hand.get_strategy_key.should eql("A9")
 		end
 
 

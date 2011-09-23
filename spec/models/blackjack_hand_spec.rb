@@ -34,23 +34,29 @@ describe BlackjackHand do
       @five2 = Card.new :diamond,5
       @ace = Card.new :diamond,:ace
       @four = Card.new :diamond,4
+      @queen1 = Card.new :diamond, :queen
+      @queen2 = Card.new :spade, :queen
     end
-
+  
+    it 'should return the correct key given two face cards' do
+      hand = BlackjackHand.new @queen1, @queen2
+      hand.get_strategy_key.to_s.should eql("1010")
+    end
 
     it 'should return the correct key given an ace hand' do
       hand = BlackjackHand.new @ace, @four
-      hand.get_strategy_key.should eql("A4")
+      hand.get_strategy_key.to_s.should eql("A4")
 		end
 
 		it 'should return the correct key given a pair hand' do
       hand = BlackjackHand.new @five, @five2
-      hand.get_strategy_key.should eql("55")  
+      hand.get_strategy_key.to_s.should eql("55")  
 		end
 
 		it 'should return the correct key given an ace with two face cards that add under 10' do
       hand = BlackjackHand.new @five, @ace
       hand << @four
-      hand.get_strategy_key.should eql("A9")
+      hand.get_strategy_key.to_s.should eql("A9")
 		end
 
 

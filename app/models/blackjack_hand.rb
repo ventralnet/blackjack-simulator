@@ -37,16 +37,24 @@ class BlackjackHand
 		non_ace_sum = get_non_ace_sum
 
 		if aces.count == 1 && non_ace_sum <= 9
-      return "A#{non_ace_sum}"
+      return "A#{non_ace_sum}".to_sym
 		elsif non_aces.count == 2
-      return non_aces_sum.to_s unless non_aces[0].value == non_aces[1].value
-			return "#{non_aces[0].value}#{non_aces[1].value}"
+      return non_ace_sum.to_s.to_sym unless non_aces[0].value == non_aces[1].value
+			return "#{non_aces[0].face_value[0]}#{non_aces[1].face_value[0]}".to_sym
 	  else
-      return hand_value.to_s
+      return hand_value.to_s.to_sym
 		end
 	end
 
-	private
+  def to_s
+    rtrn = ""
+    @hand.each do |currCard|
+      rtrn = rtrn + currCard.to_s
+    end 
+    return rtrn
+  end
+	
+  private
 	def get_non_ace_sum
 		non_aces = @hand.reject { |card| card.value == :ace }			
     non_aces.inject(0) { |sum, card|
@@ -65,5 +73,6 @@ class BlackjackHand
 	def non_aces
 	  @hand.reject { |card| card.value == :ace }
 	end
+
 end
 

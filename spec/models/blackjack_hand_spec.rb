@@ -2,16 +2,6 @@ require File.dirname(__FILE__) + "/" + '../../app/models/blackjack_hand.rb'
 
 describe BlackjackHand do
 
-  context 'hand_value' do
-    it 'should score face cards correctly' do
-    
-    end
-
-    it 'should score an ace hand to the most advantageous value (1 or 11)' do
-
-    end
-  end
-
   it 'should construct with the two initial hand cards' do
 
     card_one = Card.new(:diamond,1)
@@ -106,4 +96,31 @@ describe BlackjackHand do
       hand.hand_value.should eq(18) 
     end
   end 
+
+  context 'get_strategy' do
+
+    before(:all) do
+      @strategy = {:A3 => {"3".to_sym => :hit},"15".to_sym => {"3".to_sym => :double}}
+    end
+
+    context 'should return correct strategy with dealer showing ace' do
+      
+      it 'should return hit when necessary' do
+        dealer_card = Card.new(:spade, 3)
+        players_cards = BlackjackHand.new(Card.new(:spade, :ace), Card.new(:diamond, 3))
+
+        players_cards.get_strategy(dealer_card,@strategy).should eql(:hit)        
+      end
+
+      
+      it 'should return hit even though double is the correct strategy if it is not the players initial hand' do
+        dealer_card = Card.new(:spade, 3)
+        players_cards = BlackjackHand.new(Card.new(:spade, :ace), Card.new(:diamond, 3))
+        players_cards << Card.new(:spade, :ace)
+        players_cards.get_strategy(dealer_card,@strategy).should eql(:hit)
+      end
+ 
+    end
+
+  end
 end

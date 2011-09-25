@@ -46,8 +46,22 @@ class BlackjackHand
 		end
 	end
 
-  def get_strategy dealer_show_card, player_cards, strategie_table
-    
+  def get_strategy dealer_show_card, strategy_table
+    strat_key = get_strategy_key
+ 
+    strat_set = strategy_table[strat_key]
+
+    dealer_key = nil
+    if (dealer_show_card.is_ace?)
+      dealer_key = :ace
+    else
+      dealer_key = dealer_show_card.face_value[0].to_s.to_sym
+    end 
+    suggested_play = strat_set[dealer_key]
+    if @hand.count > 2 && suggested_play == :double
+      suggested_play = :hit 
+    end
+    return suggested_play
   end
 
   def to_s

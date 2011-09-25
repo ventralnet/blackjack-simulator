@@ -16,7 +16,7 @@ class Card
   end
  
   def face_value
-    if @value == :ace
+    if is_ace? 
       [1,11]
     elsif (@value == :jack || @value == :queen || @value == :king)
       [10]

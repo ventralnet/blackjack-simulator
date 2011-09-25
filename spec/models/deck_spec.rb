@@ -7,7 +7,7 @@ describe Deck do
   end
 
   it 'should contain 52 cards' do
-    @deck.deck.count.should eq(56)
+    @deck.deck.count.should eq(52)
   end
 
   it 'should shuffle cards when shuffle! is called' do

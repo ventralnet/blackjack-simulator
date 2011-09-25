@@ -9,7 +9,7 @@ describe Shoe do
     cards = []
     cards << shoe.deal_card << shoe.deal_card
 
-    shoe.shoe.count.should eq(54)
+    shoe.shoe.count.should eq(50)
 
 
     shoe.burn_cards 
@@ -24,7 +24,7 @@ describe Shoe do
 
     cards = []
     
-    55.times do
+    51.times do
       shoe.deal_card
     end
  
@@ -33,6 +33,6 @@ describe Shoe do
     shoe.shoe.count.should eq(0)
     shoe.burn_cards
     shoe.deal_card
-    shoe.shoe.count.should eq(55)
+    shoe.shoe.count.should eq(51)
   end
 end

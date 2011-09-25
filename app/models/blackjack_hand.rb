@@ -46,6 +46,10 @@ class BlackjackHand
 		end
 	end
 
+  def get_strategy dealer_show_card, player_cards, strategie_table
+    
+  end
+
   def to_s
     rtrn = ""
     @hand.each do |currCard|

@@ -11,7 +11,7 @@ def load_strategies
   strat1.merge!(strat2).merge!(strat3)
 end
 
-num_hands = 1000000
+num_hands = 100000
 shoe = Shoe.new 6
 shoe.shuffle!
 bet_size = 5

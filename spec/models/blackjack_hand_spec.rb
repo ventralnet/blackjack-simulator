@@ -100,7 +100,7 @@ describe BlackjackHand do
   context 'get_strategy' do
 
     before(:all) do
-      @strategy = {:A3 => {"3".to_sym => :hit},"15".to_sym => {"3".to_sym => :double}}
+      @strategy = {:A3 => {"3".to_sym => :hit},"15".to_sym => {"3".to_sym => :double,:ace => :stay}}
     end
 
     context 'should return correct strategy with dealer showing ace' do
@@ -118,6 +118,19 @@ describe BlackjackHand do
         players_cards = BlackjackHand.new(Card.new(:spade, :ace), Card.new(:diamond, 3))
         players_cards << Card.new(:spade, :ace)
         players_cards.get_strategy(dealer_card,@strategy).should eql(:hit)
+      end
+ 
+      it 'should double when necessary' do
+        dealer_card = Card.new(:spade, 3)
+        players_cards = BlackjackHand.new(Card.new(:spade, :queen), Card.new(:spade, 5))
+        players_cards.get_strategy(dealer_card, @strategy).should eql(:double)
+      end
+
+      it 'should do the right thing if dealer is showing an ace' do
+        dealer_card = Card.new(:spade, :ace)
+        
+        players_cards = BlackjackHand.new(Card.new(:space, :queen), Card.new(:diamond, 5))
+        players_cards.get_strategy(dealer_card, @strategy).should eql(:stay)
       end
  
     end

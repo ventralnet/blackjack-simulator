@@ -18,6 +18,20 @@ describe BlackjackHand do
 
   end
 
+  it 'should be able to determine if it is a pair hand' do
+    card_one = Card.new(:diamond, 2)
+    card_two = Card.new(:spade, 2)
+    card_three = Card.new(:club, 4)
+
+    blackjack_hand = BlackjackHand.new(card_one, card_two)
+
+    blackjack_hand.is_pair?.should be_true
+
+    blackjack_hand = BlackjackHand.new(card_one, card_three)
+   
+    blackjack_hand.is_pair?.should be_false
+  end
+
   context 'get_strategy_key' do
     before(:all) do
       @five = Card.new :spade,5

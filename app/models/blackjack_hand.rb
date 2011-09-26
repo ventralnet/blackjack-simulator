@@ -18,6 +18,14 @@ class BlackjackHand
     @hand << card
   end
 
+  def is_pair?
+    if @hand.count == 2 && @hand[0].value == @hand[1].value
+      return true
+    else
+      return false
+    end
+  end
+
   def hand_value
     #grab aces
     nonAceSum = get_non_ace_sum

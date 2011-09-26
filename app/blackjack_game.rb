@@ -1,22 +1,16 @@
 require File.dirname(__FILE__) + "/models/" + 'shoe.rb'
 require File.dirname(__FILE__) + "/models/" + 'blackjack_hand.rb'
+require File.dirname(__FILE__) + "/util/" + 'strategy_util.rb'
 require 'yaml'
 
 
-def load_strategies
-  strat1 = YAML.load(File.open("#{File.dirname(__FILE__)}/../config/strategy.yaml"))
-  strat2 = YAML.load(File.open("#{File.dirname(__FILE__)}/../config/strategy_aces.yaml"))
-  strat3 = YAML.load(File.open("#{File.dirname(__FILE__)}/../config/strategy_pairs.yaml"))
-
-  strat1.merge!(strat2).merge!(strat3)
-end
 
 num_hands = 100000
 shoe = Shoe.new 6
 shoe.shuffle!
 bet_size = 5
 
-strategies = load_strategies
+strategies = StrategyUtil.load_strategies
 
 
 playerWins = 0

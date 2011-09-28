@@ -2,6 +2,40 @@ require File.dirname(__FILE__) + "/" + '../../app/models/blackjack_hand.rb'
 
 describe BlackjackHand do
 
+  context 'is_soft?' do
+
+    before(:each) do 
+      @ace = Card.new(:diamond,:ace)
+      @ace2 = Card.new(:diamond,:ace)
+      @ten = Card.new(:spade,:queen)
+      @seven = Card.new(:spade, 7)
+      @six = Card.new(:spade, 6)
+      @five = Card.new(:spade, 5)
+      @two = Card.new(:spade, 2)
+    end  
+ 
+    it 'should handle under 17 correctly' do
+      hand = BlackjackHand.new(@ace,@two)
+      hand.is_soft?.should be_false
+    end
+
+    it 'should handle over 17 correctly' do
+      hand = BlackjackHand.new(@ace,@seven)
+      hand.is_soft?.should be_false
+    end
+
+    it 'should handle soft 17 correctly with one ace' do
+      hand = BlackjackHand.new(@ace,@six)
+      hand.is_soft?.should be_true
+    end
+
+    it 'should handle soft 17 with multiple aces' do
+      hand = BlackjackHand.new(@ace,@five)
+      hand << @ace2
+      hand.is_soft?.should be_true
+    end
+  end
+
   it 'should construct with the two initial hand cards' do
 
     card_one = Card.new(:diamond,1)
@@ -114,7 +148,13 @@ describe BlackjackHand do
   context 'get_strategy' do
 
     before(:all) do
-      @strategy = {:A3 => {"3".to_sym => :hit},"15".to_sym => {"3".to_sym => :double,:ace => :stay}}
+      @strategy = {:A3 => {"3".to_sym => :hit},"15".to_sym => {"3".to_sym => :double,:ace => :stay}, "17".to_sym => {"3".to_sym => :stay}}
+    end
+
+    it 'should return correct strategy if players hand contains a face card' do
+       player = BlackjackHand.new(Card.new(:spade,:queen),Card.new(:diamond, 7))
+       dealer_card = Card.new(:spade, 3)
+       player.get_strategy(dealer_card,@strategy).should eql(:stay)
     end
 
     context 'should return correct strategy with dealer showing ace' do

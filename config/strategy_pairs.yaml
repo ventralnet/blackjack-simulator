@@ -1,111 +1,111 @@
 --- 
 :AA: 
-  2: :split
-  3: :split
-  4: :split
-  5: :split
-  6: :split
-  7: :split
-  8: :split
-  9: :split
-  10: :split
+  :2: :split
+  :3: :split
+  :4: :split
+  :5: :split
+  :6: :split
+  :7: :split
+  :8: :split
+  :9: :split
+  :10: :split
   :ace: :split
 :1010: 
-  2: :stay
-  3: :stay
-  4: :stay
-  5: :stay
-  6: :stay
-  7: :stay
-  8: :stay
-  9: :stay
-  10: :stay
+  :2: :stay
+  :3: :stay
+  :4: :stay
+  :5: :stay
+  :6: :stay
+  :7: :stay
+  :8: :stay
+  :9: :stay
+  :10: :stay
   :ace: :stay
 :99: 
-  2: :split
-  3: :split
-  4: :split
-  5: :split
-  6: :split
-  7: :stay
-  8: :split
-  9: :split
-  10: :stay
+  :2: :split
+  :3: :split
+  :4: :split
+  :5: :split
+  :6: :split
+  :7: :stay
+  :8: :split
+  :9: :split
+  :10: :stay
   :ace: :stay
 :88: 
-  2: :split
-  3: :split
-  4: :split
-  5: :split
-  6: :split
-  7: :split
-  8: :split
-  9: :split
-  10: :split
+  :2: :split
+  :3: :split
+  :4: :split
+  :5: :split
+  :6: :split
+  :7: :split
+  :8: :split
+  :9: :split
+  :10: :split
   :ace: :split
 :77: 
-  2: :split
-  3: :split
-  4: :split
-  5: :split
-  6: :split
-  7: :split
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :split
+  :3: :split
+  :4: :split
+  :5: :split
+  :6: :split
+  :7: :split
+  :8: :hit
+  :9: :hit
+  :10: :hit
   :ace: :hit
 :66: 
-  2: :hit
-  3: :split
-  4: :split
-  5: :split
-  6: :split
-  7: :split
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :hit
+  :3: :split
+  :4: :split
+  :5: :split
+  :6: :split
+  :7: :split
+  :8: :hit
+  :9: :hit
+  :10: :hit
   :ace: :hit
 :55: 
-  2: :double
-  3: :double
-  4: :double
-  5: :double
-  6: :double
-  7: :double
-  8: :double
-  9: :double
-  10: :hit
+  :2: :double
+  :3: :double
+  :4: :double
+  :5: :double
+  :6: :double
+  :7: :double
+  :8: :double
+  :9: :double
+  :10: :hit
   :ace: :hit
 :44: 
-  2: :hit
-  3: :hit
-  4: :hit
-  5: :hit
-  6: :hit
-  7: :hit
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :hit
+  :3: :hit
+  :4: :hit
+  :5: :hit
+  :6: :hit
+  :7: :hit
+  :8: :hit
+  :9: :hit
+  :10: :hit
   :ace: :hit
 :33: 
-  2: :hit
-  3: :hit
-  4: :splt
-  5: :split
-  6: :split
-  7: :split
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :hit
+  :3: :hit
+  :4: :splt
+  :5: :split
+  :6: :split
+  :7: :split
+  :8: :hit
+  :9: :hit
+  :10: :hit
   :ace: :hit
 :22: 
-  2: :hit
-  3: :hit
-  4: :splt
-  5: :split
-  6: :split
-  7: :split
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :hit
+  :3: :hit
+  :4: :splt
+  :5: :split
+  :6: :split
+  :7: :split
+  :8: :hit
+  :9: :hit
+  :10: :hit
   :ace: :hit

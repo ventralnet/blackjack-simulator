@@ -25,6 +25,28 @@ class BlackjackHand
       return false
     end
   end
+ 
+  def is_soft?
+    if hand_value != 17
+      return false
+    else
+      nonAceSum = get_non_ace_sum     
+      
+      numAces = aces.count
+
+      ones = numAces - 1
+
+      if (ones > 0)
+         nonAceSum = nonAceSum + ones
+      end
+ 
+      if (numAces >= 1)
+        return true unless nonAceSum + 11 != 17
+      end
+
+      return false
+    end 
+  end
 
   def hand_value
     #grab aces
@@ -56,8 +78,11 @@ class BlackjackHand
 
   def get_strategy dealer_show_card, strategy_table
     strat_key = get_strategy_key
- 
+
     strat_set = strategy_table[strat_key]
+    if (strat_set.nil?)
+      return :hit
+    end
 
     dealer_key = nil
     if (dealer_show_card.is_ace?)

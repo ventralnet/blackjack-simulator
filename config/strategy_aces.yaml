@@ -1,99 +1,100 @@
 --- 
 :A10: 
-  2: :stay
-  3: :stay
-  4: :stay
-  5: :stay
-  6: :stay
-  7: :stay
-  8: :stay
-  9: :stay
-  10: :stay
+  :2: :stay
+  :3: :stay
+  :4: :stay
+  :5: :stay
+  :6: :stay
+  :7: :stay
+  :8: :stay
+  :9: :stay
+  :10: :stay
   :ace: :stay
 :A9: 
-  2: :stay
-  3: :stay
-  4: :stay
-  5: :stay
-  6: :stay
-  7: :stay
-  8: :stay
-  9: :stay
-  10: :stay
+  :2: :stay
+  :3: :stay
+  :4: :stay
+  :5: :stay
+  :6: :stay
+  :7: :stay
+  :8: :stay
+  :9: :stay
+  :10: :stay
   :ace: :stay
 :A8: 
-  2: :stay
-  3: :stay
-  4: :stay
-  5: :stay
-  6: :stay
-  7: :stay
-  8: :stay
-  9: :stay
-  10: :stay
+  :2: :stay
+  :3: :stay
+  :4: :stay
+  :5: :stay
+  :6: :stay
+  :7: :stay
+  :8: :stay
+  :9: :stay
+  :10: :stay
   :ace: :stay
 :A7: 
-  2: :stay
-  3: :double
-  4: :double
-  5: :double
-  6: :double
-  7: :stay
-  8: :stay
-  9: :hit
-  10: :hit
+  :2: :stay
+  :3: :double
+  :4: :double
+  :5: :double
+  :6: :double
+  :7: :stay
+  :8: :stay
+  :9: :hit
+  :10: :hit
   :ace: :hit
 :A6: 
-  2: :hit
-  3: :double
-  4: :double
-  5: :double
-  6: :double
-  7: :hit
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :hit
+  :3: :double
+  :4: :double
+  :5: :double
+  :6: :double
+  :7: :hit
+  :8: :hit
+  :9: :hit
+  :10: :hit
   :ace: :hit
 :A5: 
-  2: :hit
-  3: :hit
-  4: :double
-  5: :double
-  6: :double
-  7: :hit
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :hit
+  :3: :hit
+  :4: :double
+  :5: :double
+  :6: :double
+  :7: :hit
+  :8: :hit
+  :9: :hit
+  :10: :hit
+  :ace: :hit
 :A4: 
-  2: :hit
-  3: :hit
-  4: :double
-  5: :double
-  6: :double
-  7: :hit
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :hit
+  :3: :hit
+  :4: :double
+  :5: :double
+  :6: :double
+  :7: :hit
+  :8: :hit
+  :9: :hit
+  :10: :hit
   :ace: :hit
 :A3: 
-  2: :hit
-  3: :hit
-  4: :hit
-  5: :double
-  6: :double
-  7: :hit
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :hit
+  :3: :hit
+  :4: :hit
+  :5: :double
+  :6: :double
+  :7: :hit
+  :8: :hit
+  :9: :hit
+  :10: :hit
   :ace: :hit
 :A2: 
-  2: :hit
-  3: :hit
-  4: :hit
-  5: :double
-  6: :double
-  7: :hit
-  8: :hit
-  9: :hit
-  10: :hit
+  :2: :hit
+  :3: :hit
+  :4: :hit
+  :5: :double
+  :6: :double
+  :7: :hit
+  :8: :hit
+  :9: :hit
+  :10: :hit
   :ace: :hit

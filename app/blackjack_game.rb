@@ -122,7 +122,7 @@ class BlackjackGame
 end
 
 
-b = BlackjackGame.new 1000000, 5, 6
+b = BlackjackGame.new 100000, 5, 6
 
 b.play_game
 

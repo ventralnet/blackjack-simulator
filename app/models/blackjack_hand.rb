@@ -100,9 +100,9 @@ class BlackjackHand
   def to_s
     rtrn = ""
     @hand.each do |currCard|
-      rtrn = rtrn + currCard.to_s
+      rtrn = rtrn + currCard.to_s + ","
     end 
-    return rtrn
+    return rtrn.chomp(",")
   end
 	
   private

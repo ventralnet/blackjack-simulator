@@ -68,7 +68,7 @@ class BlackjackGame
       puts "SPLITTING #{dps dealerHand, playerHand}"
       play_hand(dealerHand, BlackjackHand.new(playerHand.hand[0], @shoe.deal_card), curr_bet_size)
       play_hand(dealerHand, BlackjackHand.new(playerHand.hand[1], @shoe.deal_card), curr_bet_size) 
-    elsif strat == :double
+    elsif strat == :double || (strat == :doublestand && playerHand.hand.count == 2)
       puts "DOUBLING"
       playerHand << @shoe.deal_card 
       curr_bet_size = curr_bet_size * 2
@@ -77,7 +77,7 @@ class BlackjackGame
       puts "HITTING #{dps dealerHand,playerHand}"
       playerHand << @shoe.deal_card
       play_hand(dealerHand,playerHand,curr_bet_size)
-    elsif strat == :stay
+    elsif strat == :stay || (strat == :doublestand && playerHand.hand.count > 2)
       puts "STAY #{dps dealerHand, playerHand}"
       hand_result = finish_hand dealerHand, playerHand
     end

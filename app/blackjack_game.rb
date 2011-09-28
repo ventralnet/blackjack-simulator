@@ -45,12 +45,15 @@ class BlackjackGame
     puts "Playing hand... #{dps dealerHand, playerHand}"
     show_card = dealerHand.hand[0]
 
-    if (playerHand.hand_value > 21)
+    playerHandValue = playerHand.hand_value
+    dealerHandValue = dealerHand.hand_value
+
+    if (playerHandValue > 21)
       puts "BUSTED! #{dp dealerHand, playerHand}" 
       @num_losses = @num_losses + 1
       @total_winnings = @total_winnings - curr_bet_size
       return nil
-    elsif playerHand.hand_value == 21 && playerHand.hand.count == 2
+    elsif playerHandValue == 21 && playerHand.hand.count == 2
       if dealerHand.hand_value == 21
         puts "PUSH! #{dp dealerHand, playerHand}"
         @num_pushes = @num_pushes + 1
@@ -72,14 +75,14 @@ class BlackjackGame
       puts "DOUBLING"
       playerHand << @shoe.deal_card 
       curr_bet_size = curr_bet_size * 2
-      hand_result = finish_hand dealerHand, playerHand 
+      hand_result = finish_hand dealerHand, playerHand, playerHandValue
     elsif strat == :hit
       puts "HITTING #{dps dealerHand,playerHand}"
       playerHand << @shoe.deal_card
       play_hand(dealerHand,playerHand,curr_bet_size)
     elsif strat == :stay
       puts "STAY #{dps dealerHand, playerHand}"
-      hand_result = finish_hand dealerHand, playerHand
+      hand_result = finish_hand dealerHand, playerHand, playerHandValue
     end
 
     if (hand_result == :win)
@@ -99,15 +102,17 @@ class BlackjackGame
     puts "------------------------------------------------------------"
   end
 
-  def finish_hand dealerHand, playerHand
+  def finish_hand dealerHand, playerHand, playerHandValue
     #deal to dealer to hard 17
     until dealerHand.hand_value >= 17 && !dealerHand.is_soft? 
       dealerHand << @shoe.deal_card
     end
 
-    if playerHand.hand_value > dealerHand.hand_value
+    dealerHandValue = dealerHand.hand_value
+
+    if playerHandValue > dealerHandValue || dealerHandValue > 21
       return :win
-    elsif playerHand.hand_value == dealerHand.hand_value
+    elsif playerHandValue == dealerHandValue
       return :push
     else
       return :loss
@@ -117,7 +122,7 @@ class BlackjackGame
 end
 
 
-b = BlackjackGame.new 10000000, 5, 6
+b = BlackjackGame.new 1000000, 5, 6
 
 b.play_game
 

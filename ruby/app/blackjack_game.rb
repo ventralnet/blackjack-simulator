@@ -42,20 +42,20 @@ class BlackjackGame
   end
   private
   def play_hand dealerHand, playerHand, curr_bet_size
-    puts "Playing hand... #{dps dealerHand, playerHand}"
+    #puts "Playing hand... #{dps dealerHand, playerHand}"
     show_card = dealerHand.hand[0]
 
     if (playerHand.hand_value > 21)
-      puts "BUSTED! #{dp dealerHand, playerHand}" 
+      #puts "BUSTED! #{dp dealerHand, playerHand}" 
       @num_losses = @num_losses + 1
       @total_winnings = @total_winnings - curr_bet_size
       return nil
     elsif playerHand.hand_value == 21 && playerHand.hand.count == 2
       if dealerHand.hand_value == 21
-        puts "PUSH! #{dp dealerHand, playerHand}"
+        #puts "PUSH! #{dp dealerHand, playerHand}"
         @num_pushes = @num_pushes + 1
       elsif
-        puts "BLACKJACK! #{dp dealerHand, playerHand}"
+        #puts "BLACKJACK! #{dp dealerHand, playerHand}"
         @num_wins = @num_wins + 1
         @total_winnings = @total_winnings + (curr_bet_size * 3/2.to_f)
       end
@@ -65,38 +65,38 @@ class BlackjackGame
     strat = playerHand.get_strategy show_card,@strategies
     hand_result = nil 
     if (strat == :split)
-      puts "SPLITTING #{dps dealerHand, playerHand}"
+      #puts "SPLITTING #{dps dealerHand, playerHand}"
       play_hand(dealerHand, BlackjackHand.new(playerHand.hand[0], @shoe.deal_card), curr_bet_size)
       play_hand(dealerHand, BlackjackHand.new(playerHand.hand[1], @shoe.deal_card), curr_bet_size) 
     elsif strat == :double
-      puts "DOUBLING"
+      #puts "DOUBLING"
       playerHand << @shoe.deal_card 
       curr_bet_size = curr_bet_size * 2
       hand_result = finish_hand dealerHand, playerHand 
     elsif strat == :hit
-      puts "HITTING #{dps dealerHand,playerHand}"
+      #puts "HITTING #{dps dealerHand,playerHand}"
       playerHand << @shoe.deal_card
       play_hand(dealerHand,playerHand,curr_bet_size)
     elsif strat == :stay
-      puts "STAY #{dps dealerHand, playerHand}"
+      #puts "STAY #{dps dealerHand, playerHand}"
       hand_result = finish_hand dealerHand, playerHand
     end
 
     if (hand_result == :win)
-      puts "WIN! #{dp dealerHand, playerHand}"
+      #puts "WIN! #{dp dealerHand, playerHand}"
       @num_losses = @num_losses + 1
       @total_winnings = @total_winnings - curr_bet_size
     elsif hand_result == :loss
-      puts "LOSS! #{dp dealerHand, playerHand}"
+      #puts "LOSS! #{dp dealerHand, playerHand}"
       @num_wins = @num_wins + 1
       @num_losses = @num_losses + 1
       @total_winnings = @total_winnings - curr_bet_size
     elsif hand_result == :push
-      puts "PUSH! #{dp dealerHand, playerHand}"
+      #puts "PUSH! #{dp dealerHand, playerHand}"
       @num_pushes = @num_pushes + 1
     end
 
-    puts "------------------------------------------------------------"
+    #puts "------------------------------------------------------------"
   end
 
   def finish_hand dealerHand, playerHand
